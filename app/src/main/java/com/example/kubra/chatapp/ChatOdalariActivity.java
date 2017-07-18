@@ -23,7 +23,6 @@ public class ChatOdalariActivity extends AppCompatActivity {
     Button buttonOdaEkle;
     ArrayList<String> chatOdalariList = new ArrayList<String>();
     FirebaseDatabase database;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -27,6 +27,12 @@
                 android:textStyle="italic|bold"
                  />
 
+            <ImageView
+                android:id="@+id/imageViewResmi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/screen_background_light_transparent" />
+
             <TextView
                 android:id="@+id/textViewMesaji"
                 android:layout_width="match_parent"

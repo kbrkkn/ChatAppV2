@@ -29,6 +29,12 @@
                 android:layout_height="wrap_content"
                 />
 
+            <ImageView
+                android:id="@+id/imageViewResmim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/screen_background_light_transparent" />
+
             <TextView
                 android:id="@+id/textViewMesajim"
                 android:layout_width="match_parent"

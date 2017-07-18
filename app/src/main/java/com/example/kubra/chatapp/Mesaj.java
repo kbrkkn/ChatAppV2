@@ -1,13 +1,14 @@
 package com.example.kubra.chatapp;
-
 public class Mesaj {
-    private String gonderen,mesaj,zaman;
+    private String gonderen,mesaj,zaman,resimUrl;
+
     public Mesaj(){}
 
-    public Mesaj(String gonderen, String mesaj, String zaman) {
+    public Mesaj(String gonderen, String mesaj, String zaman, String resimUrl) {
         this.gonderen = gonderen;
         this.mesaj = mesaj;
         this.zaman = zaman;
+        this.resimUrl=resimUrl;
     }
 
     public String getGonderen() {return gonderen;}
@@ -31,4 +32,8 @@ public class Mesaj {
     public void setZaman(String zaman) {
         this.zaman = zaman;
     }
+
+    public String getResimUrl() {return resimUrl;}
+
+    public void setResimUrl(String resimUrl) {this.resimUrl = resimUrl;}
 }

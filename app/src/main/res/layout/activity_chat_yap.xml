@@ -22,18 +22,32 @@
         android:layout_width="match_parent"
         android:layout_height="345dp" />
 
-    <EditText
-        android:id="@+id/editTextMesaj"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Mesajınız"
-        android:layout_weight="0.95" />
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="42dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        <EditText
+            android:id="@+id/editTextMesaj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Mesajınız"
+            android:inputType="textPersonName" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonMesajGonder"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:text="Gönder"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:enabled="false"
+        />
 </LinearLayout>
