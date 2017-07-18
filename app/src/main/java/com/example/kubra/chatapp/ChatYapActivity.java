@@ -112,8 +112,7 @@ public class ChatYapActivity extends AppCompatActivity {
         tvBaslik.setText(oda);
 
         final ArrayList<Mesaj> mesajList=new ArrayList<Mesaj>();
-
-
+        
         database=FirebaseDatabase.getInstance();
         dbRef=database.getReference("chats/"+oda);
 
