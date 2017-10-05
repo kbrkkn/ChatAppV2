@@ -1,6 +1,6 @@
 package com.example.kubra.chatapp;
 import android.content.Intent;
-import android.icu.text.SimpleDateFormat;
+import java.text.SimpleDateFormat;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
