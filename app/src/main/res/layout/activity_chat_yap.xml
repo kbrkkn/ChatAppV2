@@ -20,7 +20,11 @@
     <ListView
         android:id="@+id/listViewChatYap"
         android:layout_width="match_parent"
-        android:layout_height="345dp" />
+        android:layout_height="345dp"
+
+        android:stackFromBottom="true"
+
+        />
 
     <LinearLayout
         android:layout_width="match_parent"

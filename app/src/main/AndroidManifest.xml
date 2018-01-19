@@ -17,6 +17,6 @@
         </activity>
         <activity android:name=".KayitOlActivity" />
         <activity android:name=".ChatOdalariActivity" />
-        <activity android:name=".ChatYapActivity"></activity>
+        <activity android:windowSoftInputMode="adjustResize" android:name=".ChatYapActivity"></activity>
     </application>
 </manifest>

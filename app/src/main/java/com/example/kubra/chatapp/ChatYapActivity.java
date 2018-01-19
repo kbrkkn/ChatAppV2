@@ -31,7 +31,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+
 public class ChatYapActivity extends AppCompatActivity {
     TextView tvBaslik;
     EditText et_mesaj;
@@ -125,9 +128,7 @@ public class ChatYapActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String gonderen=firebaseUser.getEmail();
                 String mesaj=et_mesaj.getText().toString();
-                SimpleDateFormat sdf=new SimpleDateFormat("HH:mm:dd");
-                String zaman=sdf.format(new Date());
-
+                String zaman = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss").format(Calendar.getInstance().getTime());
                 dbRef.push().setValue(new Mesaj(gonderen,mesaj,zaman,null));
                 et_mesaj.setText("");
             }
