@@ -33,7 +33,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
+import java.util.TimeZone;
 
 public class ChatYapActivity extends AppCompatActivity {
     TextView tvBaslik;
@@ -128,7 +128,9 @@ public class ChatYapActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String gonderen=firebaseUser.getEmail();
                 String mesaj=et_mesaj.getText().toString();
-                String zaman = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss").format(Calendar.getInstance().getTime());
+                Calendar calendar= Calendar.getInstance();
+                calendar.setTimeZone(TimeZone.getDefault());
+                String zaman = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss").format(calendar.getTime());
                 dbRef.push().setValue(new Mesaj(gonderen,mesaj,zaman,null));
                 et_mesaj.setText("");
             }
