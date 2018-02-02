@@ -32,17 +32,33 @@ public class MainActivity extends AppCompatActivity {
         buttonGirisYap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userEmail=et_userEmail.getText().toString();
-                String userSifre=et_userSifre.getText().toString();
-                mAuth.signInWithEmailAndPassword(userEmail,userSifre).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                   if(task.isSuccessful()){
-                       Intent authIntent=new Intent(getApplicationContext(),ChatOdalariActivity.class);
-                       startActivity(authIntent);}
-                   else{
-                       Toast.makeText(getApplicationContext(),"Giriş yapılamadı.",Toast.LENGTH_SHORT).show();}}
-                });
+                String userEmail = et_userEmail.getText().toString();
+                String userSifre = et_userSifre.getText().toString();
+                if(!userEmail.equals("") && !userSifre.equals("")) {
+
+                    mAuth.signInWithEmailAndPassword(userEmail, userSifre).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+                                                                                                     @Override
+                                                                                                     public void onComplete(@NonNull Task<AuthResult> task) {
+                                                                                                         if (task.isSuccessful()) {
+                                                                                                             Intent authIntent = new Intent(getApplicationContext(), ChatOdalariActivity.class);
+                                                                                                             startActivity(authIntent);
+                                                                                                         } else {
+                                                                                                             Toast.makeText(getApplicationContext(), "Giriş yapılamadı.", Toast.LENGTH_SHORT).show();
+                                                                                                         }
+
+
+                                                                                                     }
+                                                                                                 }
+
+
+                    );
+                }
+
+                else{
+                    Toast.makeText(getApplicationContext(),"Tüm alanları doldurmanız gerekiyor!",Toast.LENGTH_LONG).show();
+
+                }
             }});
 
         tv_uyari.setOnClickListener(new View.OnClickListener() {

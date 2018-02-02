@@ -31,20 +31,29 @@ public class KayitOlActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String sifre=et_sifre.getText().toString();
                 String email=et_email.getText().toString();
+                if(!sifre.equals("") && !email.equals("")) {
 
-                mAuth.createUserWithEmailAndPassword(email,sifre).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(getApplicationContext(),"Kayıt Başarılı",Toast.LENGTH_SHORT).show();
-                            Intent  intent=new Intent(getApplicationContext(),MainActivity.class);
-                            startActivity(intent);
-                            finish();
 
-                    }
-                        else{
-                            Toast.makeText(getApplicationContext(),"Kayıt Başarısız",Toast.LENGTH_SHORT).show();}
-                    }
-                });}});
+
+                    mAuth.createUserWithEmailAndPassword(email, sifre).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getApplicationContext(), "Kayıt Başarılı", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                                finish();
+
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Kayıt Başarısız", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Tüm alanları doldurmanız gerekiyor!",Toast.LENGTH_LONG).show();
+                }
+
+            }});
     }
 }
